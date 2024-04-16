@@ -268,6 +268,13 @@ Fonctionnalités :<br>
 + Authentification des utilisateurs pour accéder au blog et possibilité de s'inscrire pour créer un compte.<br>
 + Publication d'articles de blog : Les utilisateurs authentifiés peuvent créer et publier des articles contenant un titre et une description.
 
+
+![Login](./images/login.png)
+
+![Signup](./images/Signup.png)
+
+![Myblogs](./images/Myblogs.png)
+
 #### Solution :
 
 ```HTML
