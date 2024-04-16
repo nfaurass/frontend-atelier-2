@@ -5,52 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Wall</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
 </head>
 
 <body>
 
-    <div class="container">
-        <header class="d-flex flex-column flex-md-row align-items-center py-3 border-bottom">
-            <h1 class="me-md-auto">CODE WALL</h1>
-            <nav class="d-none d-md-block">
-                <a href="#" class="px-3 link-secondary">My Blogs</a>
-                <a href="#" class="px-3 link-secondary">Login</a>
-                <a href="#" class="px-3 link-secondary">Sign Up</a>
-            </nav>
-        </header>
+    <header class="container d-flex flex-column flex-md-row align-items-center py-3 border-bottom">
+        <h1 class="me-md-auto">CODE WALL</h1>
+        <nav class="d-none d-md-block">
+            <a href="#" class="px-3 link-secondary" id="myBlogsBtn">My Blogs</a>
+            <a href="#" class="px-3 link-secondary" id="loginBtn">Login</a>
+            <a href="#" class="px-3 link-secondary" id="signUpBtn">Sign Up</a>
+        </nav>
+    </header>
 
+    <div id="MyBlog" class="container">
         <main class="py-3">
-            <h2>Your Blog Posts</h2>
-            <div class="form-group">
-                <label for="userSelect">Select User or Create New:</label>
-                <select class="form-control" id="userSelect">
-                    <option value="">Create New User</option>
-                    <!-- Option to select existing users will be added dynamically -->
-                </select>
+
+            <div class="d-flex justify-content-between">
+                <h2><span style="text-transform: capitalize;" id="usernameBlogPosts"></span> Blog Posts</h2>
+                <button type="button" id="addPostBtn" class="btn btn-primary">Add New Post</button>
             </div>
 
-            <button type="button" class="btn btn-primary">Add New Post</button>
-
-            <div class="card my-3">
-                <div class="card-body">
-                    <!-- Input field for title -->
-                    <input type="text" class="form-control mb-2" placeholder="Title">
-
-                    <!-- Text area for description -->
-                    <textarea class="form-control mb-2" rows="3" placeholder="Description"></textarea>
-
-                    <button id="postBtn" class="btn btn-primary">POST</button>
+            <div id="addPostsList">
+                <div class="card my-3">
+                    <div class="mx-3 mt-2 fs-3">Your Post</div>
+                    <div class="card-body">
+                        <input id="postTitle" type="text" class="form-control mb-2" placeholder="Title">
+                        <textarea id="postDescription" class="form-control mb-2" rows="8"
+                            placeholder="Description"></textarea>
+                        <button id="postBtn" class="btn btn-primary post0">POST</button>
+                    </div>
                 </div>
             </div>
         </main>
 
-        <div id="postsList"></div>
+        <div id="postsList" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+        </div>
+
     </div>
 
+    <div id="Login" class="container">
+        <h1 class="fs-2 mt-5">Login</h1>
+        <h5 class="fs-6 mb-4">username: admin <br> password: admin</h5>
+        <form>
+            <div class="mb-3">
+                <label for="usernameLogin" class="form-label">Username</label>
+                <input type="email" class="form-control" id="usernameLogin" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="passwordLogin" class="form-label">Password</label>
+                <input type="password" class="form-control" id="passwordLogin">
+            </div>
+            <button type="submit" class="btn btn-primary" id="LoginFormBtn">Login</button>
+        </form>
+    </div>
 
+    <div id="SignUp" class="container">
+        <h1 class="fs-2 mb-4 mt-5">Sign Up</h1>
+        <form>
+            <div class="mb-3">
+                <label for="usernameSignup" class="form-label">Username</label>
+                <input type="text" class="form-control" id="usernameSignup">
+            </div>
+            <div class="mb-3">
+                <label for="emailSignup" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailSignup">
+            </div>
+            <div class="mb-3">
+                <label for="passwordSignup" class="form-label">Password</label>
+                <input type="password" class="form-control" id="passwordSignup">
+            </div>
+            <button type="submit" class="btn btn-primary" id="SignUpFormBtn">Sign Up</button>
+        </form>
+    </div>
 
 </body>
 <script src="miniblog.js"></script>
